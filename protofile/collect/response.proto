@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package collect;
+option java_multiple_files = true;
+option java_package = "com.mxl.collect";
+option objc_class_prefix = "XLPR";
+
+import "google/protobuf/any.proto";
+import "common/msg_error.proto"; // 错误码
+
+// 收藏文献
+message CollectResponse {
+    bool collect_success = 1;
+    common.GrpcError error = 2;
+}

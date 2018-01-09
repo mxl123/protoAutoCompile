@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package collect;
+option java_multiple_files = true;
+option java_package = "com.mxl.collect";
+option objc_class_prefix = "XLPR";
+
+
+// 收藏
+message CollectRequest {
+    string user_id = 1; // 用户id
+    string doc_id = 2; // 资源id
+    string doc_type = 3; // 资源类型
+}

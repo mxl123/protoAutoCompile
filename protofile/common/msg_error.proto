@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package common;
+option java_package = "com.mxl.common";
+
+
+enum ErrorCode {
+     PASS_ERROR = 0; // 密码错误
+     NO_REGIST = 1; // 用户还未注册
+     USER_EXIST = 2; // 用户已经注册
+     NEED_FIELD = 3; // 参数不完整
+     UNKNOWN_FILELD_TYPE = 4; // 参数类型错误
+     RESULT_NULL = 5; // 数据查询结果为空
+}
+
+message GrpcError {
+    ErrorMessage error_message = 1;
+}
+
+message ErrorMessage {
+    ErrorCode error_code = 1;
+    string error_reason = 2;
+    string error_description = 3;
+}
